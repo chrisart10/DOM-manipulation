@@ -7,7 +7,7 @@ console.log('div Live List\n', divLiveList);
 console.log('div Static List\n', divStaticList);
 // Excercise 2: 
 // Itarate list using forEach method in boths variable (divStaticList,divLiveList )
-// hint: remeber convert to array if is necesary.
+// hint: remember convert to array if is necesary.
 const divLiveList_Array = Array.from(divLiveList);
 
 console.log('Execercise 2:\n\n');
@@ -61,13 +61,7 @@ divStaticList.forEach(div => {
 // for example some definition => some definition:
 
 divStaticList.forEach(div =>{
-    // TODO pensar como evitar el error del ultimo valor.
-
-    if(div.childNodes[4].nodeType == Node.TEXT_NODE){
-        div.childNodes[4].textContent += ":";
-        console.log(div.childNodes[4]);
-    }
-
+    div.childNodes[4].textContent += ":";
 });
 
 // Excercise 6:
@@ -79,12 +73,12 @@ divStaticList.forEach(div=>{
 })
 
 // Excercise 7: 
-// Change font-style of Header
+// Change text decoration of Header
 const header = document.querySelector('header');
 header.style.textDecoration = 'underline dotted #99a6d1 5px';
-// Change background and override message of footer
+// Change background, override message of footer with 'I\'m a master of The DOM', Add 20px of padding 
 const footer = document.querySelector('footer');
 footer.textContent = 'I\'m a master of The DOM';
 footer.style.backgroundColor = '#273975';
 footer.style.color = '#ffffff';
-footer.style.padding = '20px'
+footer.style.padding = '20px';
