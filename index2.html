@@ -33,6 +33,7 @@
 
 <body>
     <table>
+        <caption>Calculation of expenses</caption>
         <thead>
             <tr>
                 <th id="purchase">Purchase</th>
@@ -55,11 +56,16 @@
     <script>
         const table = document.querySelector('table');
         console.log(table);
+        console.log('head:', table.tHead);
+        console.log('caption:', table.caption);
         for (row of table.rows) {
             console.log(row.cells[4].textContent);
         }
-        const cost = table.rows[1].cells[4];
-        console.log('cost of haircut:', cost.textContent);
+        console.log('Cost of haircut:', table.rows[1].cells[4].textContent);
+
+        const tbody = document.querySelector('tbody')
+        console.log('body:', tbody);
+        console.log('Cost of haircut:', tbody.rows[0].cells[4].textContent);
     </script>
 </body>
 
