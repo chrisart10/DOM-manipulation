@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        table,
+        th,
+        td {
+            border: 3px solid black;
+            background-color: aliceblue;
+        }
+
+        th,
+        td {
+            padding: 10px 20px;
+        }
+    </style>
+    <title>The Dom Part 2 - Tables</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th id="purchase">Purchase</th>
+                <th id="location">Location</th>
+                <th id="date">Date</th>
+                <th id="evaluation">Evaluation</th>
+                <th id="cost">Cost (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="haircut">Haircut</th>
+                <td headers="location haircut">Hairdresser</td>
+                <td headers="date haircut">12/09</td>
+                <td headers="evaluation haircut">Great idea</td>
+                <td headers="cost haircut">30</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const table = document.querySelector('table');
+        console.log(table);
+        for (row of table.rows) {
+            console.log(row.cells[4].textContent);
+        }
+        const cost = table.rows[1].cells[4];
+        console.log('cost of haircut:', cost.textContent);
+    </script>
+</body>
+
+</html>
