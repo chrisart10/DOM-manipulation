@@ -82,3 +82,9 @@ footer.textContent = 'I\'m a master of The DOM';
 footer.style.backgroundColor = '#273975';
 footer.style.color = '#ffffff';
 footer.style.padding = '20px';
+
+// Excercise 8: 
+// remove dummy comments.
+divStaticList.forEach(div=>{
+    div.removeChild(div.childNodes[3]);
+})
