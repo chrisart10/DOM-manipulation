@@ -5,6 +5,7 @@ let divStaticList = document.querySelectorAll('div');
 console.log('Execercise 1:\n\n');
 console.log('div Live List\n', divLiveList);
 console.log('div Static List\n', divStaticList);
+
 // Excercise 2: 
 // Itarate list using forEach method in boths variable (divStaticList,divLiveList )
 // hint: remember convert to array if is necesary.
@@ -19,6 +20,7 @@ console.log('Iterating div Static List using For Each:');
 divStaticList.forEach(element => {
     console.log(element);
 });
+
 // Excercise 3:
 // Get element's child of live div list
 console.log('Execercise 3:\n\n')
@@ -31,6 +33,7 @@ console.log('Iterating div Static List using For Each:');
 divStaticList.forEach(element => {
     console.log('Node\'s Child of div Static List\n', element.childNodes);
 });
+
 // Excercise 4:
 /* 
 Part 1:
@@ -59,18 +62,31 @@ divStaticList.forEach(div => {
 // Excercise 5:
 // Add ":" to the phrase some definition.
 // for example some definition => some definition:
-
-divStaticList.forEach(div =>{
-    div.childNodes[4].textContent += ":";
+console.log('Excercise 5:\n');
+divStaticList.forEach(div => {
+    div.childNodes.forEach(element=>{
+        if(element.textContent.trim() === 'some definition'){
+            console.log(element);
+            element.textContent += ":";
+        }
+    });
 });
 
-// Excercise 6:
-// change background of every div
+// alternative
+// divStaticList.forEach(div =>{
+//     div.childNodes[4].textContent += ":";
+// });
 
-divStaticList.forEach(div=>{
+
+// Excercise 6:
+// change background of every div and 5 px of margin ( left and right)
+
+divStaticList.forEach(div => {
     div.style.backgroundColor = '#ced3db';
     div.style.border = '2px dashed black';
-})
+    div.style.marginLeft = '5px';
+    div.style.marginRight = '5px';
+});
 
 // Excercise 7: 
 // Change text decoration of Header
@@ -85,6 +101,6 @@ footer.style.padding = '20px';
 
 // Excercise 8: 
 // remove dummy comments.
-divStaticList.forEach(div=>{
+divStaticList.forEach(div => {
     div.removeChild(div.childNodes[3]);
-})
+});
